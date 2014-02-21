@@ -27,6 +27,7 @@ module.exports =
     options.type ?= 'GET'
     options.data ?= null
     options.contentType ?= 'application/json'
+    options.headers.accept ?= 'application/json'
 
     client = Ti.Network.createHTTPClient
 
