@@ -8,7 +8,7 @@ createTiapp = (options) ->
 
   tiapp = 'tiapp.xml'
 
-  path.exists tiapp, (exists) ->
+  fs.exists tiapp, (exists) ->
 
     if exists
       console.log "#{tiapp} already exists, so the bootstrap process isn't needed."
@@ -39,7 +39,7 @@ module.exports =
 
         dirName = "Resources/#{resourceDir}"
 
-        path.exists dirName, (exists) ->
+        fs.exists dirName, (exists) ->
 
           if exists
             console.log "#{dirName} already exists. Skipping creation."

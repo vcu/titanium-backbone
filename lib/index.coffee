@@ -39,7 +39,7 @@ copyTiappIfNeeded = (callback) ->
   buildPath = 'build/iphone'
   appPath = path.join buildPath, 'tiapp.xml'
 
-  path.exists appPath, (exists) ->
+  fs.exists appPath, (exists) ->
     if exists
       callback()
     else
