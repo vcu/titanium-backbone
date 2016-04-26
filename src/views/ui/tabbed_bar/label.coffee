@@ -4,7 +4,7 @@ View = require 'views/base'
 
 module.exports = class TabbedBarLabel extends View
 
-  attributes: styles.inactive
+  #attributes: styles.inactive
 
   events: =>
     click: =>
