@@ -26,7 +26,10 @@ module.exports =
     options.timeout ?= 1000000
     options.type ?= 'GET'
     options.data ?= null
-    options.contentType ?= 'application/json'
+    #options.contentType ?= 'application/json'
+    unless options.multipart
+      options.contentType ?= 'application/json'
+    options.accept ?= 'application/json'
 
     client = Ti.Network.createHTTPClient
 

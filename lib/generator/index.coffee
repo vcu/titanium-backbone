@@ -52,7 +52,7 @@ module.exports =
     if options.puburl.substr(0,4) != 'http'
       options.puburl = 'http://' + options.puburl
 
-    path.exists options.dir, (exists) ->
+    fs.exists options.dir, (exists) ->
 
       writeFile = (name, contents, callback) ->
 
@@ -77,7 +77,7 @@ module.exports =
       else
 
         wrench.copyDirRecursive "#{__dirname}/_template", options.dir, ->
-          
+
           writeFile 'package.json', (pd.json JSON.stringify buildPackage(options)), ->
 
             console.log """
